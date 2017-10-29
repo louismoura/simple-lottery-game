@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Lottery game</title>
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/normalize.min.css">
+  <link rel="stylesheet" href="./styles/style.min.css">
+</head>
+<body>
+  <div class="playerDescription">
+    <p class="player-name-text"></p>
+    <p class="player-credits"></p>
+  </div>
+  <div class="player-window">
+    <h1 class="game-title">lottery game</h1>
+    <div class="welcome-window">
+      <h2 class="welcome">Welcome back <span class="welcome-name"></span></h2>
+      <input type="button" class="close-welcome" value="Play!">
+    </div>
+    <form class="new-player-form">
+      <input class="new-player-input" type="text" value="" placeholder="Type your name">
+      <input class="start-btn" type="submit" value="Play!">
+    </form>
+  </div>
+  <div class="playground">
+    <div class="numbersContainer"></div>
+    <p class="game-alert"></p>
+    <input class="play-btn" type="button" value="Play! -1$">
+    <div class="lottery-numbers"></div>
+    <p class="game-results"></p>
+  </div>
+  <script type="text/javascript" src="./scripts/main-es5.min.js"></script>
+</body>
+</html>

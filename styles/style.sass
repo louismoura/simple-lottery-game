@@ -1,0 +1,252 @@
+$mainYellow: #FFEB3B
+$darkYellow: #FBC02D
+$blue: #00BCD4
+$darkGrey: #757575
+$light: #FFF9C4
+
+
+body, html
+  width: 100%
+  overflow-x: hidden
+  margin: 0
+  padding: 0
+  background: $light
+
+*
+  box-sizing: border-box
+  font-family: 'Oswald', sans-serif
+
+.game-title
+  font-size: 44px
+  color: $darkGrey
+  text-transform: uppercase
+  letter-spacing: 2px
+
+.playground
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  display: none
+  opacity: 0
+  transition: 1s
+  transform: scale(0.8)
+
+.showGame-start .playground
+  display: flex
+
+
+.showGame .playground
+  opacity: 1
+  transform: scale(1)
+
+.numbersContainer
+  display: flex
+  margin: 20px auto 0 auto
+  justify-content: space-between
+  padding: 15px
+  flex-wrap: wrap
+  max-width: 400px
+  background-color: $mainYellow
+  border-radius: 20px
+
+.number
+  width: 60px
+  height: 60px
+  background: $blue
+  color: #fff
+  font-size: 40px
+  margin: 5px
+  cursor: pointer
+  display: flex
+  justify-content: center
+  align-items: center
+  border-radius: 50%
+  position: relative
+
+
+.active.number::before
+  content: ''
+  position: absolute
+  top: 0
+  left: 0
+  border-radius: 6px
+  transform-origin: left
+  transform: rotate(40deg)
+  height: 6px
+  width: 0
+  background: red
+  display: block
+  transition: .3s
+  transition-delay: .3s
+
+.active-start.number::before
+  width: 130%
+
+
+.active.number::after
+  content: ''
+  position: absolute
+  top: 0
+  right: 0
+  border-radius: 6px
+  transform-origin: right
+  transform: rotate(-48deg)
+  height: 6px
+  width: 0
+  background: red
+  display: block
+  transition: .3s
+
+.active-start.number::after
+  width: 130%
+
+.play-btn
+  padding: 12px 14px
+  border-radius: 10px
+  background: $darkYellow
+  color: #fff
+  border: none
+  font-size: 24px
+  margin: 20px auto
+  text-align: center
+
+.game-results
+  font-size: 26px
+  color: $darkGrey
+  text-align: center
+
+.game-alert
+  font-size: 24px
+  color: red
+  margin: 20px 0 0 0
+  display: none
+
+.lottery-numbers
+  display: flex
+  flex-wrap: wrap
+
+.playerDescription
+  display: flex
+  color: #fff
+  justify-content: flex-end
+  background: $darkYellow
+  margin-bottom: 15px
+  font-size: 24px
+  height: 52px
+  box-shadow: 0px -5px 27px 5px rgba(0,0,0,0.75)
+
+.showGame .playerDescription
+  height: auto
+
+.player-name-text,
+.player-credits
+  margin: 10px
+  font-size: 22px
+  display: none
+  transition: 0.8s
+  opacity: 0
+  transform: translate(0, -150%)
+
+.player-credits
+  transition-delay: 0.2s
+
+.showGame-start
+  .player-name-text,
+  .player-credits
+    display: flex
+
+.showGame
+  .player-name-text,
+  .player-credits
+    opacity: 1
+    transform: translate(0, 0)
+
+//PLAYER WINDOW
+
+.player-window
+  height: 400px
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+//FORM STYLES
+
+.new-player-form
+  opacity: 0
+  display: none
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  transition: 0.6s
+.new-player-input
+  padding-left: 8px
+  width: 250px
+  height: 50px
+  border-radius: 15px
+  border: 8px solid $darkYellow
+  margin: 10px 0
+  font-size: 20px
+.start-btn
+  width: 160px
+  height: 50px
+  border-radius: 15px
+  border: 8px solid $darkYellow
+  margin: 10px 0
+  background: $blue
+  color: #fff
+  font-size: 20px
+
+.new-start .new-player-form
+  display: flex
+
+.new .new-player-form
+  opacity: 1
+
+//WELCOME MSG STYLES
+
+.welcome-window
+  display: none
+  opacity: 0
+  transition: 0.6s
+  flex-direction: column
+  justify-content: center
+  align-items: center
+.close-welcome
+  width: 160px
+  height: 50px
+  border-radius: 15px
+  border: 8px solid $darkYellow
+  margin: 10px 0
+  background: $blue
+  color: #fff
+  font-size: 20px
+.welcome
+  font-size: 32px
+  color: $darkGrey
+
+
+.back-start .welcome-window
+  display: flex
+
+.back .welcome-window
+  opacity: 1
+
+//START GAME
+
+.showGame-start .player-window, .welcome-window
+  display: none
+
+
+//MEDIA
+
+@media screen and (max-width: 420px)
+  .number
+    width: 45px
+    height: 45px
+    font-size: 28px
+    margin: 4px
+  .playerDescription
+    justify-content: space-between
+  .numbersContainer
+    margin: 20px 5px 0 5px
